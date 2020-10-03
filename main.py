@@ -184,6 +184,7 @@ class Notepad:
   
         # Run main application 
         self.__root.mainloop() 
+        print("Ananomous changes")
   
   
   
