@@ -1,8 +1,6 @@
 import tkinter 
 import os     
 from tkinter import *
-from tkinter.messagebox import *
-from tkinter.filedialog import *
   
 class Notepad: 
   
@@ -111,9 +109,6 @@ class Notepad:
   
         self.__thisScrollBar.pack(side=RIGHT,fill=Y)                     
           
-        # Scrollbar will adjust automatically according to the content         
-        self._thisScrollBar.config(command=self._thisTextArea.yview)      
-        self._thisTextArea.config(yscrollcommand=self._thisScrollBar.set) 
       
           
     def __quitApplication(self): 
@@ -178,9 +173,6 @@ class Notepad:
             file = open(self.__file,"w") 
             file.write(self.__thisTextArea.get(1.0,END)) 
             file.close() 
-  
-    def __cut(self): 
-        self.__thisTextArea.event_generate("<<Cut>>") 
   
     def __copy(self): 
         self.__thisTextArea.event_generate("<<Copy>>") 
