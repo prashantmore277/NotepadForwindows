@@ -160,7 +160,42 @@ class Notepad:
                                                        ("Text Documents", "*.txt")])
 
             if self.__file == "":
-                self.__file = None
+              patch-1
+            else: 
+                  
+                # Try to save the file 
+                file = open(self.__file,"w") 
+                file.write(self.__thisTextArea.get(1.0,END)) 
+                file.close() 
+                  
+                # Change the window title 
+                self._root.title(os.path.basename(self._file) + " - Notepad") 
+                  
+              
+        else: 
+            file = open(self.__file,"w") 
+            file.write(self.__thisTextArea.get(1.0,END)) 
+            file.close() 
+  
+    def __copy(self): 
+        self.__thisTextArea.event_generate("<<Copy>>") 
+  
+    def __paste(self): 
+        self.__thisTextArea.event_generate("<<Paste>>") 
+  
+    def run(self): 
+  
+        # Run main application 
+        self.__root.mainloop() 
+        print("Ananomous changes")
+  
+  
+  
+  
+# Run main application 
+notepad = Notepad(width=600,height=400) 
+notepad.run()
+=======
             else:
 
                 # Try to save the file
@@ -196,3 +231,4 @@ class Notepad:
 
 notepad = Notepad(width=600, height=400)
 notepad.run()
+main
